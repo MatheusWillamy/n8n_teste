@@ -1,11 +1,12 @@
-FROM ubuntu:latest
+ROM ubuntu:latest
 
+RUN apt-get update && \
+    apt-get install -y curl nginx
+
+# Instala o EasyPanel
 RUN curl -sSL https://get.easypanel.io | sh
-
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
 
 EXPOSE 80
 EXPOSE 443
 
-CMD ["/start.sh"]
+
