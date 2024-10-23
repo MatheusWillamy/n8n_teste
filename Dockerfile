@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-
+RUN curl -sSL https://get.docker.com | sh
 # Instala o EasyPanel
 RUN docker run --rm -it \
   -v /etc/easypanel:/etc/easypanel \
